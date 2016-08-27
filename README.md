@@ -9,6 +9,7 @@
 - Statistics
 - Running a single Neural Network from a json file multiple time
 - Cool ASCII art
+
 ### Requirements
 ---
 - pygame
