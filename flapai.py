@@ -4,6 +4,7 @@ import sys
 import time
 import datetime
 import logging
+import os
 
 import pygame
 from pygame.locals import *
@@ -24,6 +25,10 @@ from colorama import *
 
 
 today = "save/" + str(datetime.date.today()) + "_" + time.strftime("%X")
+
+if not os.path.exists(today):
+    os.makedirs(today)
+
 savestat = True
 fpsspeed=3
 FPS = 4000
