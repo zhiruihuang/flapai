@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <title>Network | Sizing</title>
+
+  <style type="text/css">
+    html, body {
+      font: 10pt arial;
+    }
+    #mynetwork {
+      width: 600px;
+      height: 600px;
+      border: 1px solid lightgray;
+    }
+  </style>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.css" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript">
+    var nodes = null;
+    var edges = null;
+    var network = null;
+
+    function draw() {
+      // create people.
+      // value corresponds with the age of the person
+      nodes = [
+        {id: 1,  value: 40,  label: 'BirdHeight' },
+        {id: 2,  value: 40, label: 'TubeHeight'},
+        {id: 3,  value: 10, label: 'Hidden1'},
+        {id: 4,  value: 10, label: 'Hidden2' },
+        {id: 5,  value: 10, label: 'Hidden3' },
+        {id: 6,  value: 10, label: 'Hidden4'},
+        {id: 7,  value: 10,  label: 'Hidden5'},
+        {id: 8,  value: 10,  label: 'Hidden6'},
+        {id: 9,  value: 30, label: 'Output'},
+        {id: 10, value: 3, label: 'Bias1'},
+        {id: 11, value: 3, label: 'Bias2'},
+        {id: 12, value: 3, label: 'Bias3'},
+        {id: 13, value: 3, label: 'Bias4'},
+        {id: 14, value: 3, label: 'Bias5'},
+        {id: 15, value: 3, label: 'Bias6'},
+        {id: 16, value: 3, label: 'Bias7'},
+      ];
+
+      // create connections between people
+      // value corresponds with the amount of contact between two people
+      edges = [
+        {from: 1, to: 3, value: 3, title: ''},
+        {from: 2, to: 3, value: 5, title: ''},
+        {from: 1, to: 4,value: 1, title: ''},
+        {from: 2, to: 4, value: 8, title: ''},
+        {from: 1, to: 5, value: 2, title: ''},
+        {from: 2, to: 5, value: 1, title: ''},
+        {from: 3, to: 6,value: 2, title: ''},
+        {from: 4, to: 6, value: 6, title: ''},
+        {from: 5, to: 6, value: 4, title: ''},
+        {from: 3, to: 7, value: 1, title: ''},
+        {from: 4, to: 7, value: 4, title: ''},
+        {from: 5, to: 7, value: 4, title: ''},
+        {from: 3, to: 8, value: 4, title: ''},
+        {from: 4, to: 8, value: 4, title: ''},
+        {from: 5, to: 8, value: 4, title: ''},
+        {from: 6, to: 9, value: 4, title: ''},
+        {from: 7, to: 9, value: 4, title: ''},
+        {from: 8, to: 9, value: 4, title: ''},
+        {from: 10, to: 3, value: 4, title: ''},
+        {from: 11, to: 4, value: 4, title: ''},
+        {from: 12, to: 5, value: 4, title: ''},
+        {from: 13, to: 6, value: 4, title: ''},
+        {from: 14, to: 7, value: 4, title: ''},
+        {from: 15, to: 8, value: 4, title: ''},
+        {from: 16, to: 9, value: 4, title: ''},
+      ];
+
+      // Instantiate our network object.
+      var container = document.getElementById('mynetwork');
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {
+        nodes: {
+          shape: 'dot',
+          scaling:{
+            label: {
+              min:8,
+              max:20
+            }
+          }
+        }
+      };
+      network = new vis.Network(container, data, options);
+    }
+  </script>
+</head>
+<body onload="draw()">
+<p>
+  Scale nodes and edges depending on their value. Hover over edges to get a popup with more information.
+</p>
+<div id="mynetwork"></div>
+</body>
+</html>
