@@ -7,7 +7,7 @@ class Config(object):
     numberOfIndividuals = 100
     #Maximum generation before exiting the Genetic Algorithm
     maxGeneration = 2000
-    #If fitnessIsScore is True, the fitness of an individual will be the score (pipe passed succesfully) multiplied by 100.
+    #If fitnessIsScore is True, the fitness of an individual will be the score (pipe passed succesfully).
     #If it's false, the fitness will be the number of frame survived
     fitnessIsScore = True
     #If Elitism is True, the best individuals will be kept in the next generation. False is a bad idea
