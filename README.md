@@ -1,4 +1,4 @@
-# FlapAI: Genetic algorithm learning to play Flappy Bird (Python)
+# FlapAI: Genetic algorithm playing Flappy Bird (Python)
 ### Introduction
 ---
 **FlapAI** is a genetic algorithm coded in Python teaching itself  how to play Flappy Bird. It can reach score of 1000+ pipes in less than 100 generations. It is based on [FlapPyBird](https://github.com/sourabhv/FlapPyBird). All settings can be found in **config.py**. Neural networks are saved in a json file for further evaluation. Each time you run FlapAI, statistics and the neural network of the best performing bird are saved in the directory **save/**
