@@ -25,7 +25,7 @@ class Population(object):
         return fittest
 
     def generateRandomPopulation(self):
-        for i in xrange(Config.numberOfIndividuals):
+        for i in range(Config.numberOfIndividuals):
             genome = generateRandomGenome()
             self.genomes.append(genome)
 
@@ -43,7 +43,7 @@ class Population(object):
             for genome in elite:
                 genome.mutate(Config.mutationRate)
 
-        for x in xrange (self.size() - elitismoffset - Config.numberofNewRandomGenomePerGeneration):
+        for x in range (self.size() - elitismoffset - Config.numberofNewRandomGenomePerGeneration):
             if Config.selectionMethod=="tournamentSelection":
                 if Config.FatherAlwaysElite:
                     if Config.FatherRandomElite:
@@ -78,7 +78,7 @@ class Population(object):
             genomes.append(newIndiv)
 
         #Random genome
-        for x in xrange (Config.numberofNewRandomGenomePerGeneration):
+        for x in range (Config.numberofNewRandomGenomePerGeneration):
             newIndiv = generateRandomGenome()
 
             if Config.mutateNewBorn:
@@ -171,7 +171,7 @@ class Population(object):
 
         if Config.crossoverVersion==1:
             genome = Genome()
-            for i in xrange(genome1.size()):
+            for i in range(genome1.size()):
                 # Crossover
                 if random.random() <= Config.uniformRate:
                     genome.setGene(i, genome1.getGene(i))
@@ -265,7 +265,7 @@ def tournamentSelection(population):
     # Create a tournament population
     tournament = Population()
     # For each place in the tournament get a random individual
-    for i in xrange(Config.tournamentSize):
+    for i in range(Config.tournamentSize):
         randomInt = random.randint(0,Config.numberOfIndividuals - 1)
         #print "individual added to the tournament, number %s" % randomInt
         #print('\n' * 3)
