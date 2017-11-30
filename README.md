@@ -32,6 +32,7 @@ If you want to see the statistics of a past experiment use **-stats**
 ```sh
 python flapai.py -stats save/2016-08-27_17:16:04
 ```
+The new version runs the program by replacing ```sh flapai.py``` with ```sh flapai_py3_windows.py``` in the command.
 ### Keyboard commands
 ---
 Press **UP ARROW** while focusing the game window to speed up the game **(if the screen is frozen it means that pygame don't redraw the window anymore which speed the algorithm a lot)**
