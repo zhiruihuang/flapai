@@ -47,7 +47,7 @@ if not os.path.exists(today):
     os.makedirs(today)
 
 savestat = True
-fpsspeed=3
+fpsspeed = 3
 FPS = 4000
 
 bestFitness = 0
@@ -121,7 +121,7 @@ def printc(text,color):
     print(Style.RESET_ALL)
 
 def main():
-
+    global bestFitness
 
 
 
@@ -180,7 +180,7 @@ def main():
             }
             updateScreen(informationforscreen)
             if genome.fitness > bestFitness:
-                global bestFitness
+                # global bestFitness
                 bestFitness = genome.fitness
                 genome.network.save(today + "/bestfitness.json")
             birdnmbr += 1
@@ -283,6 +283,7 @@ def playGame(genome):
     return genome
 
 def mainGame(movementInfo,genome):
+    global fpsspeed
     score = playerIndex = loopIter = 0
     playerIndexGen = movementInfo['playerIndexGen']
     playerx, playery = int(SCREENWIDTH * 0.2), movementInfo['playery']
@@ -332,11 +333,11 @@ def mainGame(movementInfo,genome):
                     sys.exit()
             if event.type == KEYDOWN and event.key == K_UP:
                 if fpsspeed < 4:
-                    global fpsspeed
+                    # global fpsspeed
                     fpsspeed += 1
             if event.type == KEYDOWN and event.key == K_DOWN:
                 if fpsspeed != -2:
-                    global fpsspeed
+                    # global fpsspeed
                     fpsspeed -= 1
         #Evaluate the NN
         if playerx < lowerPipes[0]['x'] + detectionOffset:
