@@ -108,7 +108,8 @@ class Network(object):
         dir = os.path.dirname(filename)
         if not os.path.exists(dir):
             os.makedirs(dir)
-        f = open(filename, "wb")
+        # f = open(filename, "wb")
+        f = open(filename, "w")
         json.dump(data, f)
         f.close()
 
